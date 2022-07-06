@@ -1,6 +1,6 @@
 var FFI= require("ffi-napi")
 const fs = require('fs');
-var suter = new FFI.Library('libsuter_lib.dylib', {
+var suter = new FFI.Library('libsuter_lib', {
     'generate_keys': ['void',['string','string']],
     'encrypt_with_pubkey': ['void',['string','string','char*']],
     'decrypt_with_prikey': ['uint64',['string','string']],
