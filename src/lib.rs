@@ -120,10 +120,11 @@ fn gen_tx(balance:*const c_char,pk:*const c_char,sk:*const c_char,to_pk:*const c
         &sender_sk,
     )
     .expect("Should be able to create transaction");
-    println!("交易创建成功，保存为:{}",tx_name);
+    
     let tx = transaction.to_bytes().unwrap();
     let tx_name = read_str(tx_name);
     fs::write(tx_name, hex::encode(tx)).unwrap();
+    println!("交易创建成功，保存为:{}",tx_name);
 }
 
 #[no_mangle]
