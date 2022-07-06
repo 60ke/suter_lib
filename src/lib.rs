@@ -106,15 +106,11 @@ fn gen_tx(balance:*const c_char,pk:*const c_char,sk:*const c_char,to_pk:*const c
 
     let num = read_num(to_value);
     
-    println!("构建transfer");
+
     let mut transfers = Vec::new();
     transfers.push((receiver_pk,num));
 
     println!("创建交易:");
-    println!("sender_balance: {:?}\n",&sender_balance);
-    println!("transfers: {:?}\n",&transfers);
-    println!("sender_pk: {:?}\n",&sender_pk);
-    println!("sender_sk: {:?}\n",&sender_sk);
 
     let transaction = Transaction::<u64>::create_transaction(
         &sender_balance,
@@ -124,7 +120,7 @@ fn gen_tx(balance:*const c_char,pk:*const c_char,sk:*const c_char,to_pk:*const c
         &sender_sk,
     )
     .expect("Should be able to create transaction");
-    println!("交易创建成功");
+    println!("交易创建成功，保存为:{}",tx_name);
     let tx = transaction.to_bytes().unwrap();
     let tx_name = read_str(tx_name);
     fs::write(tx_name, hex::encode(tx)).unwrap();
