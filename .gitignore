@@ -6,3 +6,4 @@ target/*
 *.txt
 *.dylib
 .vscode
+nodejs/libsuter_lib.d

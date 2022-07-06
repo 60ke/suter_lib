@@ -1,8 +1,7 @@
 #![crate_type = "cdylib"]
-use std::f64::MAX;
 use std::fs;
 use rand_core::OsRng;
-use std::ffi::{CStr,CString};
+use std::ffi::CStr;
 use libc::c_char;
 use suter_proofs::confidential::ConfidentialTransaction;
 use suter_proofs::confidential::Transaction;
@@ -64,7 +63,7 @@ fn generate_keys(pk_name:*const c_char,sk_name:*const c_char){
 }
 
 #[no_mangle]
-fn encrypt_with_pubkey(key:*const c_char,value:*const c_char,mut out: *mut c_char){
+fn encrypt_with_pubkey(key:*const c_char,value:*const c_char,out: *const c_char){
 
     
     let pk = read_pk(key);
