@@ -1,0 +1,15 @@
+[package]
+name = "suter_lib"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+suter_proofs = {git="https://github.com/60ke/suter-proofs.git"}
+rand_core = "0.5.1"
+hex="0.4.0"
+bincode = "1"
+libc = "*"
+[lib]
+crate-type=["cdylib"]

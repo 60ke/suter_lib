@@ -1,0 +1,8 @@
+.idea
+*/node_modules/*
+target/*
+
+*.key
+*.txt
+*.dylib
+.vscode
