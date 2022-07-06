@@ -32,6 +32,7 @@ out为待保存的密文文件名，string类型
 
 根据私钥进行解密，返回uint类型。
 
+输入参数说明:
 ```
 pri为私钥文件名，string类型
 value为加密密文，string类型
