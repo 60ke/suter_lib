@@ -66,6 +66,12 @@ tx_name待验证交易文件名，string类型
 ```
 
 ## Example
+
 ### Nodejs
 
 nodejs目录下的suter_proof.js为该库的js调用示例。需安装`ffi-napi`
+
+
+### Go
+
+go目录下为该库的Go调用示例
