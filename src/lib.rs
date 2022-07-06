@@ -127,7 +127,7 @@ fn gen_tx(balance:*const c_char,pk:*const c_char,sk:*const c_char,to_pk:*const c
 }
 
 #[no_mangle]
-fn verify_tx(tx:*const c_char)->i8{
+fn verify_tx(tx:*const c_char)->i32{
     let tx_name = read_str(tx);
     let tx_bytes = hex::decode(fs::read(tx_name).unwrap()).unwrap();
     let tx:Transaction::<u64> = Transaction::from_bytes(&tx_bytes).unwrap();

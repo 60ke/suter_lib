@@ -28,6 +28,17 @@ value为待加密的数值，string类型
 out为待保存的密文文件名，string类型
 ```
 
+### `uint decrypt_with_prikey(char* pri,char* value)`
+
+根据私钥进行解密，返回uint类型。
+
+```
+pri为私钥文件名，string类型
+value为加密密文，string类型
+```
+
+
+
 ### `void gen_tx(char* balance,char* from_pub,char* from_pri,char* to_pub,char* to_value,char* tx_name)`
 
 生成转账隐私交易(已包含交易证明)，无返回类型
@@ -44,7 +55,7 @@ tx_name为待保存的隐私交易文件名，string类型
 ```
 
 
-### `int8 verify_tx(char* tx_name)`
+### `int verify_tx(char* tx_name)`
 
 隐私交易验证(验证交易的proof)，返回int8类型，0代表验证通过，其它数值则表明验证失败
 
